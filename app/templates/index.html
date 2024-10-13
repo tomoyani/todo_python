@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todoアプリ</title>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body>
+    <h1>Todoアプリ</h1>
+    <form action="{{ url_for('add') }}" method="POST">
+        <input type="text" name="title" placeholder="Todoを入力してください">
+        <input type="submit" value="追加">
+    </form>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            {% if todo.completed %}
+                <span><s>{{ todo.title }}</s></span>
+            {% else %}
+                <span>{{ todo.title }}</span>
+            {% endif %}
+            <form action="{{ url_for('complete', todo_id=todo.id) }}" method="POST">
+                <input type="submit" value="完了">
+            </form>
+            <form action="{{ url_for('delete', todo_id=todo.id) }}" method="POST">
+                <input type="submit" value="削除">
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

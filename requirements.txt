@@ -1,3 +1,6 @@
-Flask==2.0.2
-tkinter
-sqlalchemy==1.4.29
+Flask==3.0.3
+pytk
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+psycopg2==2.9.9
+cerberus==1.3.5

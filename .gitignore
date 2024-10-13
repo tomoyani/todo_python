@@ -1,2 +1,5 @@
-#仮想環境を削除
+# 仮想環境を削除
 myenv
+logs/
+__pycache__/
+error.log
